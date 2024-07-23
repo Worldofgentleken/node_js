@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-// public 폴더 내의 정적 파일 제공
+// static 폴더 내의 정적 파일 제공
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/', (req, res) => {
