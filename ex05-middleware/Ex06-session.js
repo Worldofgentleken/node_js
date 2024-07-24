@@ -12,7 +12,7 @@ app.use(session({
   resave: false,      // 세션이 수정되지 않아도 항상 저장
   saveUninitialized: true, // 초기화되지 않은 세션도 저장
   cookie: { 
-    httpOnly: false, // 브라우저에서 javascript로 접근 가능(false)/불가(true)
+    httpOnly: true, // 브라우저에서 javascript로 접근 가능(false)/불가(true)
     secure: false // HTTPS가 아닌 환경에서도 사용할 수 있도록 설정
   } 
 }));
