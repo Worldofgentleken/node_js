@@ -5,6 +5,14 @@ const fs = require('fs');
 
 const app = express();
 
+// 업로드 디렉토리 경로
+const uploadsDir = path.join(__dirname, 'uploads');
+
+// 업로드 디렉토리가 존재하지 않으면 생성
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
 // Multer 설정
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -12,7 +20,7 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     // 파일 이름을 유지하면서 고유하게 만듦
-    const originalName = file.originalname;
+    const originalName = Buffer.from(file.originalname, 'latin1').toString('utf8'); // 한글 처리
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
     const extension = path.extname(originalName);
     const basename = path.basename(originalName, extension);
