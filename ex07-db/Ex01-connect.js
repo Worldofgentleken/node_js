@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '1234'  // MySQL 비밀번호를 입력하세요
+  password: 'rjsgml02@'  // MySQL 비밀번호를 입력하세요
 });
 
 // 연결

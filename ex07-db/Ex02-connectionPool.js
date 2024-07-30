@@ -4,7 +4,7 @@ const mysql = require("mysql2");
 const pool = mysql.createPool({
   host: "localhost", // 데이터베이스 서버의 호스트 이름이나 IP 주소를 지정(필수)
   user: "root", // 데이터베이스에 연결할 사용자 이름(필수)
-  password: "1234", // 데이터베이스에 연결할 사용자의 비밀번호(필수)
+  password: "rjsgml02@", // 데이터베이스에 연결할 사용자의 비밀번호(필수)
   database: "mydb", // 연결할 데이터베이스 이름을 지정(필수)
   //port: 3306,                   // 데이터베이스 서버의 포트를 지정
   //waitForConnections: true,     // 풀에 여유 연결이 없는 경우, 대기 여부를 지정(true로 설정하면 여유 연결이 생길 때까지 대기)
